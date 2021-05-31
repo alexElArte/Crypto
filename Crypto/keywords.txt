@@ -1,0 +1,9 @@
+Crypto	KEYWORD1
+encodeC	KEYWORD2
+decodeC	KEYWORD2
+encodeM	KEYWORD2
+decodeM	KEYWORD2
+encodeB	KEYWORD2
+decodeB	KEYWORD2
+createCkey	KEYWORD2
+createMkey	KEYWORD2
