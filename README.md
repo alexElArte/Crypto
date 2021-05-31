@@ -22,5 +22,12 @@ Si vous utilisez les fonctions toutes seules, les données seront facilement acc
 ```
 Si vous testez le code au-dessus vous trouverez la même chose au début comme à la fin.
 
-### Attention : limite fonction encodeC()
-La taille de la clé dépend du nombre d'information à encoder
+## Attention : limite fonction encodeC()
+La taille de la clé dépend du nombre d'information à encoder:
+  * Si vous voulez encoder 32 nombres votre clé aura une taille de 32 octets
+  * Si vous voulez encoder 64 nombres votre clé aura une taille de 64 octets
+
+Vous ne pouvez pas encoder n'importe quelle valeur
+Imaginons un tableau de 16 valeur, on ne peut encoder que les valeurs de 1 à 16 (compris).
+La valeur 0 est considérée comme nul et donc changé par une valeur aléatoire
+Les autres valeurs sont également changées par des valeurs aléatoires
