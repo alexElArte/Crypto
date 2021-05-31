@@ -16,7 +16,7 @@ Crypto::Crypto(byte lenC, byte lenMsg, int seed) {
 void Crypto::encodeC(byte* msg, byte* key) {
   for (byte i = 0; i < _lenMsg; i++) {
     if (msg[i] <= _lenC && msg[i] != 0) {
-      msg[i] = key[msg[i]];
+      msg[i] = key[msg[i]-1];
     } else {
       // If it's other change it to a random number
       _test = false;
@@ -43,7 +43,7 @@ void Crypto::decodeC(byte* msg, byte* key) {
     for (byte j = 0; j < _lenC; j++) {
       if (key[j] == msg[i]) {
         _test = true;
-        msg[i] = j;
+        msg[i] = j + 1;
         break;
       }
     }
