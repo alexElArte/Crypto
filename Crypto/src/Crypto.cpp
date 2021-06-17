@@ -6,11 +6,14 @@
 
 #include "Crypto.h"
 
-Crypto::Crypto(byte lenC, byte lenMsg, int seed) {
+Crypto::Crypto(byte lenC, byte lenMsg) {
   // Something we do when the class is called
-  randomSeed(seed);
   _lenC = lenC;
   _lenMsg = lenMsg;
+}
+
+void Crypto::init(long seed) {
+  randomSeed(seed);
 }
 
 void Crypto::encodeC(byte* msg, byte* key) {
