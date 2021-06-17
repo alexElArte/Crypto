@@ -16,7 +16,7 @@
 class Crypto {
 	public:
 		Crypto(byte lenC, byte lenMsg, int seed);
-
+		void init(long seed);
 		// Encode a message with a key
 		void encodeC(byte* msg, byte* key);
 		void encodeM(byte* msg, byte* key);
