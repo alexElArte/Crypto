@@ -10,7 +10,7 @@ const byte length_msg = 16;
 // 0 is null and considered as none data type
 const byte change_array = 32;
 
-Crypto cryp(change_array, length_msg, analogRead(A0));
+Crypto cryp(change_array, length_msg);
 
 byte keyC[change_array];
 byte keyM[length_msg];
@@ -25,7 +25,10 @@ byte msg1[16] = {
 void setup() {
   Serial.begin(115200);
   Serial.println("Example to show you the functions");
-
+  
+  // Init library
+  cryp.init(analogRead(A0));
+  
   /***********************KEYM***********************/
   // Create a key
   cryp.createMkey(keyM);
