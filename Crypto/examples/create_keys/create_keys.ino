@@ -8,7 +8,7 @@ const byte length_msg = 16;
 // because 26 + 10 = 36. Also you need to add a conversion
 const byte change_array = 32;
 
-Crypto cryp(change_array, length_msg, analogRead(A0));
+Crypto cryp(change_array, length_msg);
 
 byte keyC[change_array];
 byte keyM[length_msg];
@@ -17,7 +17,10 @@ byte keyM[length_msg];
 void setup() {
   Serial.begin(115200);
   Serial.println();
-
+  
+  // Init library
+  cryp.init(analogRead(A0));
+  
   // Create two keys
   cryp.createCkey(keyC);
   cryp.createMkey(keyM);
